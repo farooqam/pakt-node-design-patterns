@@ -7,33 +7,30 @@ class Logger {
   }
 
   write(message) {
-    if (!this.onWrite) {
-      throw new Error('onWrite function is not implemented.');
+    if (!this.beforeWrite) {
+      throw new Error('beforeWrite function is not implemented.');
     }
 
-    message = this.onWrite(message);
+    message = this.beforeWrite(message);
     console.log(`${new Date()} : ${message}`);
   }
 }
 
 class LowerCaseLogger extends Logger {
-  onWrite(message) {
+  beforeWrite(message) {
     return message.toLowerCase();
   }
 }
 
 class UpperCaseLogger extends Logger {
-  onWrite(message) {
+  beforeWrite(message) {
     return message.toUpperCase();
   }
 }
 
-const lowerCaseLogger = new LowerCaseLogger();
-const upperCaseLogger = new UpperCaseLogger();
-
 module.exports = {
-  LowerCaseLogger: lowerCaseLogger,
-  UpperCaseLogger: upperCaseLogger,
+  LowerCaseLogger: new LowerCaseLogger(),
+  UpperCaseLogger: new UpperCaseLogger(),
 };
 
 
