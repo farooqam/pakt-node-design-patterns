@@ -15,5 +15,8 @@
     "eslint-config-google": "^0.14.0",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "stampit": "^4.3.0"
   }
 }

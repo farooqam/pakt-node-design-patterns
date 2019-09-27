@@ -9,7 +9,7 @@ iPhoneXr.dial('4252223344');
 iPhoneXs.showConfig();
 iPhoneXs.dial('4258887777'); */
 
-const profilerFactory = require('./profiler/profiler-factory');
+/* const profilerFactory = require('./profiler/profiler-factory');
 
 const getRandomArray = (len) => {
   const profiler = profilerFactory.create(
@@ -27,4 +27,13 @@ const getRandomArray = (len) => {
 };
 
 getRandomArray(1e6);
-console.log('Done');
+console.log('Done');*/
+
+const {westernSamurai} = require('./video-game/characters');
+
+const gojiro = westernSamurai();
+gojiro.name = 'Gojiro Kiryu';
+gojiro.move(1, 0);
+gojiro.slash('left');
+gojiro.shoot('right');
+
